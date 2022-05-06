@@ -36,7 +36,7 @@ output application/json
 {
   "code": 201,
   "message": "Created",
-  "description": "Employee created in HR system",
+  "description": "Employee created in HR system yyy",
   "datetime": now() as String {format: "yyyy-MM-dd'T'hh-MM-ss"},
   "transactionID": vars.transactionId
 }]]></ee:set-payload>
