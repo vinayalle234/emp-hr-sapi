@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="create-employee-test-suite.xml" />
+	<munit:test name="create-employee-test-suite-post:\create-employee:application\json:emp-hr-sapi-configTest" doc:id="1fe3e047-5612-434d-b151-4e25b959f9e7" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\create-employee:application\json:emp-hr-sapi-config" doc:id="ed2b8aea-1832-45f8-9f69-0cdc3eba0db2" name="post:\create-employee:application\json:emp-hr-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Info Log" doc:id="5e6c2664-71b2-4945-90ed-12563e439d0f" message="#[payload]"/>
+			<munit-tools:assert doc:name="Assert Payload Not Null" doc:id="3b607e6b-4695-416e-a41d-4d63e5abc0b9" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
